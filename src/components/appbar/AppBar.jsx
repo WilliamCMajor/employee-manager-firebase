@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import SvgLogo from './../icons/Logo';
 
 const AppBarStyles = styled.nav`
     box-shadow: 0 0 3px 1px grey;
-    padding: 1rem;
+    padding: 0.5rem;
     ul {
         display: flex;
-        justify-content: center;
+        align-items: center;
     }
     li {
         margin: 0 1rem;
@@ -16,12 +17,17 @@ const AppBarStyles = styled.nav`
         text-decoration: none;
         color: grey;
     }
+    svg {
+        width: 1.5rem;
+    }
+
 `
 
 const AppBar = () => {
     return ( 
         <AppBarStyles>
             <ul>
+                <li><SvgLogo/></li>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/login">Login</Link></li>
                 <li><Link to="/register">Register</Link></li>
