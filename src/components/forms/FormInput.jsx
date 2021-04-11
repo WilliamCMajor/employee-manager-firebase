@@ -28,7 +28,7 @@ const FormInputStyles = styled.div`
 
 const FormInput = (props) => {
     return ( 
-        <FormInputStyles>
+        <FormInputStyles {...props}> {/* onChange={props.OnChange} */}
             <label htmlFor="">{props.label}</label>
             <input type={props.type} id={props.id} name={props.name} />
         </FormInputStyles>
