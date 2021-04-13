@@ -21,8 +21,8 @@ const LoginPage = (props) => {
     const [email, setEmail] = useState('james@home.com') /* array destructure */
     const [password, setPassword] = useState('123456')
     const [isValid, setIsValid] = useState(false)
-        console.log('render');
-        console.log(auth);
+        //console.log('render');
+        //console.log(auth);
 
     /* 
         useState(init){
