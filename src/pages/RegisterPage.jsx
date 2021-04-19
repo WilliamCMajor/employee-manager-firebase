@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import {Redirect} from 'react-router-dom';
+
 import firebaseApp from './../firebase/firebaseConfig'
 
 import Button from '../components/buttons/Button';
@@ -28,12 +29,13 @@ const RegisterPageStyles = styled.aside`
 const RegisterPage = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [hasFinished, setFinished] = useState('')
+    const [hasFinished, setFinished] = useState(false)
 
     function handleNewAccount (){
         firebaseApp.auth().createUserWithEmailAndPassword(email, password)
         .then(userCredential=>{
-
+            //true
+            setFinished(true);
         })
         .catch(error=>{
             console.log(error);
@@ -53,7 +55,7 @@ const RegisterPage = (props) => {
                 <FormInput label="Name on the account" type="text" />
                 <FormInput label="Valid email address" type="email" onChange={(e)=> setEmail(e.target.value.trim())} />
                 <FormInput label="Password (min 6 characters)" type="password" onChange={(e)=> setPassword(e.target.value.trim())} />
-                <Button className="create-account" uiStyle="signup" label="create a free account" />
+                <Button className="create-account" uiStyle="signup" label="create a free account" onClick={handleNewAccount} />
     
             </RegisterPageStyles>
         );

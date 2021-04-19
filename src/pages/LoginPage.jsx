@@ -18,8 +18,8 @@ const LoginPageStyles = styled.header`
 
 const LoginPage = (props) => {
     const auth = useContext(AuthContext)
-    const [email, setEmail] = useState('james@home.com') /* array destructure */
-    const [password, setPassword] = useState('123456')
+    const [email, setEmail] = useState('') /* array destructure */
+    const [password, setPassword] = useState('')
     const [isValid, setIsValid] = useState(false)
         //console.log('render');
         //console.log(auth);
